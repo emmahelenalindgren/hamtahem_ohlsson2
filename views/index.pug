@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+  head
+    title bil
+  body
+    form(method="post")
+      input(id="dateSelect" type="date", name="valtDatum")
+      button(id="dateBtn" value=valtDatum) Send
+      div.listofcars
+        p.headline= "TILLGÄNGLIGA BILAR"
+                    div#carList
+                        each car in carList
+                            ul(className="row" data-id=car._id)
+                                figure
+                                    img(src=car.imgLink width="100px" height="100px")
+                                section
+                                    input(type="hidden", value=datum)
+                                    li= "Typ: "
+                                        span.inputjs= car.fordonstyp
+                                    li= "Märke: "
+                                        span.inputjs= car.brand + " "+ car.model
+                                    li= "Körkort: "
+                                        span.inputjs= car.requiredDrivingLicense
+                                    li= "År: "
+                                        span.inputjs= car.year
+                                    li= "Växellåda: "
+                                        span.inputjs= car.gearbox
+                                    li= "Kostnad: "
+                                        span.inputjs= car.dagshyra + "kr/dag"
+                                    li= "Kommentarer: "
+                                        span.inputjs= car.kommentarer.skador
+                                button.bookBtn.eachCar BOKA
+        script(type='text/javascript').
+            function dd(value) {
+            console.log(value);
+            }
+        script(src="./pickdate.js")        
+      

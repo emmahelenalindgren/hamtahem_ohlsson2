@@ -1,0 +1,12 @@
+ [
+       {
+            "chosenDate": "26/10/2017",
+            "carId": "59d61400e90a93ac3c8930ad",
+            "booked": true
+        },
+        {
+            "chosenDate": "28/10/2017",
+            "carId": "59d61400e90a93ac3c8930a9",
+            "booked": true
+        }
+]
